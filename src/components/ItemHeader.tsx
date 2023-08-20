@@ -2,18 +2,18 @@ import React, {FC} from 'react';
 import {Avatar, Grid, Typography} from "@mui/material";
 
 interface IPostItemHeaderProps {
-    date: string
+    date?: string
 }
-const PostItemHeader : FC<IPostItemHeaderProps> = ({date}) => {
+const ItemHeader : FC<IPostItemHeaderProps> = ({date = ''}) => {
     return (
         <>
             <Grid container alignItems='center' spacing={1} sx={{mb: 1}}>
                 <Grid item>
-                    <Avatar sx={{width: 40, height: 40}} alt="Rostislav Ivanov" src='/images/avatar.jpg'/>
+                    <Avatar sx={{width: 40, height: 40}} alt="Rostislav Ivanov" src=''/>
                 </Grid>
                 <Grid item>
                     <Typography>
-                        <strong>Ростислав Иванов</strong>
+                        <strong>Кто-то</strong>
                         <span style={{opacity: 0.7}}> поделился записью</span>
                     </Typography>
                     <Typography sx={{opacity: 0.7}}>{date}</Typography>
@@ -23,4 +23,4 @@ const PostItemHeader : FC<IPostItemHeaderProps> = ({date}) => {
     );
 };
 
-export default PostItemHeader;
+export default ItemHeader;

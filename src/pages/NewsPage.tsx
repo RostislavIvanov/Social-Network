@@ -1,14 +1,13 @@
-import React from 'react';
-import {Box, Container} from "@mui/material";
+import React, {FC} from 'react';
+import {Box} from "@mui/material";
+import NewsList from "../components/NewsList";
 
-const NewsPage = () => {
+const NewsPage: FC = () => {
     return (
         <>
-          <Box sx={{backgroundColor: '#F2F3F5', h: '500px'}}>
-              <Container maxWidth={'md'} sx={{backgroundColor: 'white', height: '500px'}}>
-
-              </Container>
-          </Box>
+            <Box sx={{backgroundColor: '#F2F3F5'}}>
+                <NewsList/>
+            </Box>
         </>
     );
 };

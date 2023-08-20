@@ -4,15 +4,20 @@ import ChatBubbleIcon from '@mui/icons-material/ChatBubble';
 import NewspaperIcon from '@mui/icons-material/Newspaper';
 import HomeIcon from '@mui/icons-material/Home';
 import {useNavigate} from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 
 const NewHeader: FC = () => {
     const navigate = useNavigate();
+    const {pathname} = useLocation();
     const [value, setValue] = React.useState('profile');
     const handleChange = (event: React.SyntheticEvent, newValue: string) => {
-        setValue(newValue);
-        navigate(`/${newValue}`);
-
+        setValue(newValue)
+        if (pathname === `/${newValue}`) {
+            window.scrollTo({top: 0, behavior: 'smooth'})
+        } else {
+            navigate(`/${newValue}`)
+        }
     };
 
     return (
